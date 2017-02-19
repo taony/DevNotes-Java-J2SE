@@ -1,14 +1,31 @@
 package com.devnotes.j2se.collections;
 
+import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Iterator;
+import java.util.List;
 
 public class CollectionDemo implements Collection<String> {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
-		
+		List<String> list = new ArrayList<String>();
+		list.add("a");
+		list.add("b");
+		list.add("c");
+		list.add("d");
+
+		System.out.println(list);
+
+		list.addAll(list);
+
+		System.out.println(list);
+
+		list.clear();
+
+		System.out.println(list);
+
 	}
 
 	@Override
@@ -26,7 +43,7 @@ public class CollectionDemo implements Collection<String> {
 	@Override
 	public void clear() {
 		// TODO Auto-generated method stub
-		
+
 	}
 
 	@Override
@@ -88,7 +105,5 @@ public class CollectionDemo implements Collection<String> {
 		// TODO Auto-generated method stub
 		return null;
 	}
-	
-	 
 
 }
