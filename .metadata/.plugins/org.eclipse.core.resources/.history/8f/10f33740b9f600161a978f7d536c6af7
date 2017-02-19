@@ -1,0 +1,15 @@
+package com.devnotes.j2se.collections;
+
+import java.util.Collection;
+
+public class CollectionDemo {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+
+		
+	}
+	
+	
+
+}
