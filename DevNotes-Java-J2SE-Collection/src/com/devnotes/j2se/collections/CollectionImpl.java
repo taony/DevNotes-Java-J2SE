@@ -4,9 +4,10 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Iterator;
 import java.util.List;
+import java.util.Vector;
 
 public class CollectionImpl implements Collection<String> {
-
+	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
@@ -25,6 +26,14 @@ public class CollectionImpl implements Collection<String> {
 		list.clear();
 
 		System.out.println(list);
+		
+		Vector<String> vctor=new Vector<String>();
+		vctor.add("1");
+		vctor.add("2");
+		vctor.add("3");
+		vctor.add("4");
+		vctor.add("5");
+		System.out.println(vctor);
 
 	}
 
