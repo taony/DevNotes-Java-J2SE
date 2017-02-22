@@ -25,8 +25,17 @@ public class CollectionTest {
 		System.out.println("addAll:" + list);
 
 		list.clear();
+		list2.clear();
 
-		System.out.println("clear:" + list);
+		list.add("A");
+		list.add("B");
+		list.add("C");
+		
+		list.add("A");
+		list.add("B");
+		list.add("D");
+		System.out.println("list.retainAll(list2):" + list.retainAll(list2));
+		System.out.println("list:" + list);
 		
 
 	}
