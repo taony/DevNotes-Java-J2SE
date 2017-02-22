@@ -2,7 +2,6 @@ package com.devnotes.j2se.collections;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Vector;
 
 public class CollectionTest {
 
@@ -15,23 +14,20 @@ public class CollectionTest {
 		list.add("c");
 		list.add("d");
 
-		System.out.println(list);
-
-		list.addAll(list);
-
-		System.out.println(list);
+		System.out.println("add:" + list);
+		
+		List<String> list2= new ArrayList<String>();
+		list2.add("1");
+		list2.add("2");
+		list2.add("3");
+		list2.add(1,"4");
+		list.addAll(2,list2);
+		System.out.println("addAll:" + list);
 
 		list.clear();
 
-		System.out.println(list);
+		System.out.println("clear:" + list);
 		
-		Vector<String> vctor=new Vector<String>();
-		vctor.add("1");
-		vctor.add("2");
-		vctor.add("3");
-		vctor.add("4");
-		vctor.add("5");
-		System.out.println(vctor);
 
 	}
 }
