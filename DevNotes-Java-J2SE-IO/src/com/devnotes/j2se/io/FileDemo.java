@@ -2,7 +2,7 @@ package com.devnotes.j2se.io;
 
 import java.io.File;
 
-public class FileTest {
+public class FileDemo {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
