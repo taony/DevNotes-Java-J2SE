@@ -8,20 +8,14 @@ import java.io.*;
 public class RandomAccessFileDemo {
 
     public static void main(String[] args) {
-
-        String pathRoot = RandomAccessFileDemo.class.getProtectionDomain().getCodeSource().getLocation().toString();
-
         try {
 
-            System.out.print(pathRoot);
-
-            File file = new File(pathRoot + "/files/raf.txt");
-
-            System.out.print(file.length());
+            File file = new File("raf.txt");
 
             write(file);
 
             read(file);
+
         } catch (Exception ex) {
             ex.printStackTrace();
         }
@@ -29,9 +23,13 @@ public class RandomAccessFileDemo {
 
     private static void write(File file) {
         try {
+
             RandomAccessFile raf = new RandomAccessFile(file, "rw");
 
-            raf.writeInt(1);
+            for (int i = 0; i < 100; i++) {
+                raf.writeInt(i);
+            }
+
             raf.writeBytes("Hello World");
 
             raf.close();
