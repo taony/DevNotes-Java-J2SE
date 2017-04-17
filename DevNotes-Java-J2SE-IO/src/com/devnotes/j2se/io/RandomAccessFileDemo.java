@@ -21,6 +21,7 @@ public class RandomAccessFileDemo {
         }
     }
 
+    //写入数据
     private static void write(File file) {
         try {
 
@@ -39,6 +40,7 @@ public class RandomAccessFileDemo {
         }
     }
 
+    //读取数据
     private static void read(File file) {
         try {
 
