@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/DevNotes-Java-J2SE-Collection/DevNotes-Java-J2SE-Collection.iml" filepath="$PROJECT_DIR$/DevNotes-Java-J2SE-Collection/DevNotes-Java-J2SE-Collection.iml" />
-      <module fileurl="file://$PROJECT_DIR$/DevNotes-Java-J2SE-IO/DevNotes-Java-J2SE-IO.iml" filepath="$PROJECT_DIR$/DevNotes-Java-J2SE-IO/DevNotes-Java-J2SE-IO.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/DevNotes-Java-J2SE.iml" filepath="$PROJECT_DIR$/.idea/DevNotes-Java-J2SE.iml" />
     </modules>
   </component>
 </project>
