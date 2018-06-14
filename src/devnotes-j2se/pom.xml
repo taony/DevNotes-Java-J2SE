@@ -10,6 +10,7 @@
   <version>1.0-SNAPSHOT</version>
   <modules>
     <module>devnotes-j2se-io</module>
+      <module>devnotes-j2se-collections</module>
   </modules>
 
   <name>devnotes-j2se</name>
