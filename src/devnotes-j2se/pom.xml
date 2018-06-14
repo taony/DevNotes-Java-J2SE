@@ -11,6 +11,7 @@
   <modules>
     <module>devnotes-j2se-io</module>
       <module>devnotes-j2se-collections</module>
+      <module>devnotes-j2se-collection</module>
   </modules>
 
   <name>devnotes-j2se</name>
