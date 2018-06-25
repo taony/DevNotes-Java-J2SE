@@ -10,6 +10,7 @@ public class RandomAccessFileDemo {
     }
 
     public void testRaf(){
+
         File file=new File(".");
 
         try {
