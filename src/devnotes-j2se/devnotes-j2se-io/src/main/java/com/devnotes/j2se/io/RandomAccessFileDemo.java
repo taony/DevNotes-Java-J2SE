@@ -2,20 +2,26 @@ package com.devnotes.j2se.io;
 
 import java.io.File;
 import java.io.RandomAccessFile;
+import java.util.Date;
+import java.util.UUID;
 
 public class RandomAccessFileDemo {
 
-    public static void main(String[] args) {
-
-    }
 
     public void testRaf(){
-        File file=new File(".");
+
+
+
+        File file=new File("C://Temp/RandomAccessFileDemo.txt");
 
         try {
-            RandomAccessFile raf1=new RandomAccessFile(file, "r");
 
-            raf1.read();
+            if(!file.exists()){
+                file.createNewFile();
+            }
+
+            RandomAccessFile raf=new RandomAccessFile(file, "rw");
+            raf.writeChars(UUID.randomUUID().toString());
 
         }catch (Exception ex){
 
