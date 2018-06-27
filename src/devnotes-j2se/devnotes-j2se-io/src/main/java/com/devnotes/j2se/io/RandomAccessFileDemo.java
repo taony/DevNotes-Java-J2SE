@@ -2,7 +2,6 @@ package com.devnotes.j2se.io;
 
 import java.io.File;
 import java.io.RandomAccessFile;
-import java.util.Date;
 import java.util.UUID;
 
 public class RandomAccessFileDemo {
