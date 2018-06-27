@@ -17,6 +17,7 @@ public class RandomAccessFileDemo {
             RandomAccessFile raf=new RandomAccessFile(file, "rw");
             raf.writeChars(UUID.randomUUID().toString());
 
+
         }catch (Exception ex){
 
         }
