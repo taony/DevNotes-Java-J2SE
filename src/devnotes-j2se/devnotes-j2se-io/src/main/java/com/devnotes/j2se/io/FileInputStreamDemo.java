@@ -1,5 +1,6 @@
 package com.devnotes.j2se.io;
 
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 
@@ -18,6 +19,9 @@ public class FileInputStreamDemo {
 
         try {
             demo.readFile();
+
+            demo.readFileWithBuffer();
+
         } catch (Exception e) {
 
         }
@@ -60,5 +64,30 @@ public class FileInputStreamDemo {
             }
 
         }
+    }
+
+    private void readFileWithBuffer() {
+
+        File file = new File("C:\\Temp\\RandomAccessFileDemo.txt");
+
+        String content = "";
+        try {
+            FileInputStream fis = new FileInputStream(file);
+
+            int size = 0;
+
+            byte[] buffer = new byte[1024];
+
+            while ((size = fis.read(buffer)) != -1) {
+                content = new String(buffer, 0, size);
+
+                //中文乱码
+                System.out.println(content);
+            }
+
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+
     }
 }
