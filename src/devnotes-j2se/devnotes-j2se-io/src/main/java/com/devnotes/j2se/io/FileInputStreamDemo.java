@@ -1,8 +1,6 @@
 package com.devnotes.j2se.io;
 
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.IOException;
+import java.io.*;
 
 /**
  * @author: taony
@@ -20,7 +18,7 @@ public class FileInputStreamDemo {
         try {
             demo.readFile();
 
-            demo.readFileWithBuffer();
+            demo.readFileWithBuffer2();
 
         } catch (Exception e) {
 
@@ -79,11 +77,35 @@ public class FileInputStreamDemo {
             byte[] buffer = new byte[1024];
 
             while ((size = fis.read(buffer)) != -1) {
-                content = new String(buffer, 0, size);
+                content = new String(buffer, 0, size,"utf-8");
 
                 //中文乱码
                 System.out.println(content);
             }
+        } catch (Exception ex) {
+            ex.printStackTrace();
+        }
+
+    }
+
+    private void readFileWithBuffer2() {
+
+        File file = new File("C:\\Temp\\RandomAccessFileDemo.txt");
+
+        String content = "";
+        try {
+            FileInputStream fis = new FileInputStream(file);
+
+            InputStreamReader reader=new InputStreamReader(fis,"GBK");
+
+            BufferedReader br=new BufferedReader(reader);
+
+            String line;
+            while ((line = br.readLine()) != null) {
+                System.out.println(line);
+            }
+            br.close();
+            reader.close();
 
         } catch (Exception ex) {
             ex.printStackTrace();
