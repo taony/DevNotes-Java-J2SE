@@ -37,7 +37,7 @@ public class FileInputStreamDemo {
             //2、返回这个输入流中可以被读的剩下的bytes字节的估计值
             int size = fis.available();
 
-            System.out.println(size);
+            System.out.println("字节长度：" + size);
 
             //3、根据输入流的字节长度长度创建字节数组
             byte[] arr = new byte[size];
