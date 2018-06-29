@@ -1,1 +1,3 @@
 /src/devnotes-j2se/.idea
+/src/devnotes-j2se/*.iml
+/src/devnotes-j2se/devnotes-j2se-io/target
