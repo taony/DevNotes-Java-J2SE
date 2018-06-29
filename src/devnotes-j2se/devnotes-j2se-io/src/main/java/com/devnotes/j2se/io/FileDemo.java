@@ -8,6 +8,11 @@ import java.io.IOException;
  */
 public class FileDemo {
 
+    public static void main(String[] args) {
+        create();
+    }
+
+
     /**
      * 创建文件
      */
