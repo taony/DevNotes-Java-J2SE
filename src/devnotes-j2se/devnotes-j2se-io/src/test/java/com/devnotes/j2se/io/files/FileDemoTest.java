@@ -1,6 +1,6 @@
 package com.devnotes.j2se.io.files;
 
-import static org.junit.Assert.*;
+import com.devnotes.j2se.io.FileDemo;
 
 /**
  * @author: taony
