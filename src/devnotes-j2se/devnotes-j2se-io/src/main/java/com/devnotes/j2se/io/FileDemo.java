@@ -1,4 +1,4 @@
-package com.devnotes.j2se.io.files;
+package com.devnotes.j2se.io;
 
 import java.io.File;
 import java.io.IOException;
