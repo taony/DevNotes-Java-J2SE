@@ -10,6 +10,10 @@ public class FileDemo {
 
     public static void main(String[] args) {
         create();
+
+        delete();
+
+        mkdir();
     }
 
 
