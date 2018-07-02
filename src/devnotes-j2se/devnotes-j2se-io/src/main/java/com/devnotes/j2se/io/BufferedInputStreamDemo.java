@@ -9,4 +9,10 @@ package com.devnotes.j2se.io;
 public class BufferedInputStreamDemo {
 
 
+    public static void main(String[] args) {
+
+    }
+
+
+
 }
