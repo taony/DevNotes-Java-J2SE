@@ -11,7 +11,6 @@ import java.io.FileInputStream;
  */
 public class BufferedInputStreamDemo {
 
-
     public static void main(String[] args) {
         try {
             FileInputStream fis=new FileInputStream("BISDemo.txt");
