@@ -12,7 +12,7 @@ public class FileDemo {
 
         //listFileNames();
 
-        listFiles();
+        listFiles(".");
 
         //create();
 
@@ -33,19 +33,17 @@ public class FileDemo {
         }
     }
 
-    public static void listFiles(){
-        File file=new File(".");
-
+    public static void listFiles(String path){
+        File file=new File(path);
         File[] files=file.listFiles();
-
         if(null!=files&& files.length>0){
             for(File f:files){
                 if(f.isDirectory()){
                     System.out.println("文件目录："+f.getPath());
+                    listFiles(f.getPath());
                 }else{
                     System.out.println("文件："+f.getName());
                 }
-
             }
         }
     }
