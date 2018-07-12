@@ -43,14 +43,18 @@ public class BufferedInputStreamDemo {
     }
 
     private static void copyFile() {
-        String file1 = "C:\\txt.log";
-        String file2 = "C:\\txt1.log";
+        String file1 = "C:\\1.png";
+        String file2 = "C:\\2.png";
 
         try {
             BufferedInputStream bis = new BufferedInputStream(new FileInputStream(file1));
             BufferedOutputStream bos = new BufferedOutputStream(new FileOutputStream(file2));
             byte[] b = new byte[128];
+            String content="";
             while (bis.read(b) != -1) {
+                content+=new String(b,"utf-8");
+                System.out.println(content);
+
                 bos.write(b);
             }
             bos.flush();
