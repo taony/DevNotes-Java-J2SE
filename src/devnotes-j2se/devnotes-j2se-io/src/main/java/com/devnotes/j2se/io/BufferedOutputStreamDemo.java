@@ -24,11 +24,10 @@ public class BufferedOutputStreamDemo {
         try {
             BufferedInputStream bis = new BufferedInputStream(new FileInputStream(file1));
             BufferedOutputStream bos = new BufferedOutputStream(new FileOutputStream(file2));
-            byte[] b = new byte[128];
+            byte[] b = new byte[1024];
             String content = "";
             int len = 0;
             while ((len = bis.read(b)) != -1) {
-                content += new String(b, "utf-8");
                 System.out.println(content);
                 bos.write(b, 0, len);
             }
