@@ -11,9 +11,7 @@ import java.io.*;
 public class BufferedInputStreamDemo {
 
     public static void main(String[] args) {
-        //readFile();
-
-        copyFile();
+        readFile();
     }
 
     private static void readFile() {
@@ -42,24 +40,5 @@ public class BufferedInputStreamDemo {
         }
     }
 
-    private static void copyFile() {
-        String file1 = "C:\\1.png";
-        String file2 = "C:\\2.png";
 
-        try {
-            BufferedInputStream bis = new BufferedInputStream(new FileInputStream(file1));
-            BufferedOutputStream bos = new BufferedOutputStream(new FileOutputStream(file2));
-            byte[] b = new byte[128];
-            String content="";
-            while (bis.read(b) != -1) {
-                content+=new String(b,"utf-8");
-                System.out.println(content);
-
-                bos.write(b);
-            }
-            bos.flush();
-        }catch (Exception ex){
-            ex.printStackTrace();
-        }
-    }
 }
