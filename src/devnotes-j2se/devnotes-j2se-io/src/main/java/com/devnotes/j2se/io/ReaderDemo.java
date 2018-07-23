@@ -17,15 +17,17 @@ public class ReaderDemo {
 
             File file = new File("C:\\Temp\\RandomAccessFileDemo.txt");
 
-            Reader reader=new FileReader(file);
+            Reader reader = new FileReader(file);
 
-            char[] chars=new char[1024];
+            char[] chars = new char[1024];
 
-            int len= reader.read(chars);
+            int len = 0;
+
+            while ((len = reader.read(chars)) != -1) {
+                System.out.println(new String(chars, 0, len));
+            }
 
             reader.close();
-
-            System.out.println(new String(chars,0,len));
 
         } catch (Exception ex) {
             ex.printStackTrace();
