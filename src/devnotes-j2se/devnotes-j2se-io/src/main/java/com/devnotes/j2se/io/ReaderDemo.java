@@ -1,7 +1,5 @@
 package com.devnotes.j2se.io;
 
-import jdk.internal.dynalink.beans.StaticClass;
-
 import java.io.File;
 import java.io.FileReader;
 import java.io.Reader;
