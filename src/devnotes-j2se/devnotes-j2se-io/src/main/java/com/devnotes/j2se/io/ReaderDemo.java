@@ -1,8 +1,6 @@
 package com.devnotes.j2se.io;
 
-import java.io.File;
-import java.io.FileReader;
-import java.io.Reader;
+import java.io.*;
 
 public class ReaderDemo {
 
@@ -15,7 +13,7 @@ public class ReaderDemo {
 
             File file = new File("C:\\Temp\\RandomAccessFileDemo.txt");
 
-            Reader reader = new FileReader(file);
+            BufferedReader reader =new BufferedReader(new InputStreamReader(new FileInputStream(file),"GBK")) ;
 
             char[] chars = new char[1024];
 
