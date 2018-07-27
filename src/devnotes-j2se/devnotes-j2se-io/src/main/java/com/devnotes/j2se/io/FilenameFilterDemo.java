@@ -7,13 +7,13 @@ public class FilenameFilterDemo {
 
     public static void main(String[] args) {
 
-     // listFiles();
+        listFiles();
 
-      listFile2();
+        listFile2();
 
     }
 
-    static void listFiles(){
+    static void listFiles() {
 
         File file = new File("D:\\");
 
@@ -27,11 +27,11 @@ public class FilenameFilterDemo {
         }
     }
 
-    static void listFile2(){
+    static void listFile2() {
         File file = new File("D:\\");
 
         //lambda表达式
-      String[] names=file.list((dir,name)->name.contains("ec") && dir.isFile());
+        String[] names = file.list((dir, name) -> name.contains("ec") && dir.isFile());
 
         for (String name : names) {
             System.out.println(name);
@@ -40,7 +40,7 @@ public class FilenameFilterDemo {
 
 
     /**
-     *  声明一个文件
+     * 声明一个文件
      */
     static class MyFilter implements FilenameFilter {
 
