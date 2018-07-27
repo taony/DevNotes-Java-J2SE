@@ -6,8 +6,18 @@ import java.io.FilenameFilter;
 public class FilenameFilterDemo {
 
     public static void main(String[] args) {
+
+     // listFiles();
+
+      listFile2();
+
+    }
+
+    static void listFiles(){
+
         File file = new File("D:\\");
 
+        //需要厂家一个过滤实现类
         MyFilter filter = new MyFilter("ec");
 
         String[] names = file.list(filter);
@@ -15,18 +25,25 @@ public class FilenameFilterDemo {
         for (String name : names) {
             System.out.println(name);
         }
-
-
-        String[] fileNames=file.list((dir,name)->name.contains("ec") && dir.isFile());
-
-        System.out.println(fileNames);
-
     }
+
+    static void listFile2(){
+        File file = new File("D:\\");
+
+        //lambda表达式
+      String[] names=file.list((dir,name)->name.contains("ec") && dir.isFile());
+
+        for (String name : names) {
+            System.out.println(name);
+        }
+    }
+
 
     /**
      *  声明一个文件
      */
     static class MyFilter implements FilenameFilter {
+
         private String type;
 
         public MyFilter(String type) {
@@ -35,6 +52,7 @@ public class FilenameFilterDemo {
 
         @Override
         public boolean accept(File dir, String name) {
+
             return dir.isFile() && name.contains(type);
         }
     }
