@@ -10,15 +10,15 @@ public class FileDemo {
 
     public static void main(String[] args) {
 
-        //listFileNames();
+        listFileNames();
 
         listFiles(".");
 
-        //create();
+        create();
 
-        //delete();
+        delete();
 
-        //mkdir();
+        mkdir();
     }
 
     public static void listFileNames() {
