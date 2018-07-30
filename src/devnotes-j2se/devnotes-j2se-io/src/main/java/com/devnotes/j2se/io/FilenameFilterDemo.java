@@ -31,7 +31,7 @@ public class FilenameFilterDemo {
         File file = new File("D:\\");
 
         //lambda表达式
-        String[] names = file.list((dir, name) -> name.contains("ec") && dir.isFile());
+        String[] names = file.list((dir, name) -> dir.isFile() || name.contains("es"));
 
         for (String name : names) {
             System.out.println(name);
