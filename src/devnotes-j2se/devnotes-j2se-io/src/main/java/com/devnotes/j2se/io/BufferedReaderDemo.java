@@ -12,7 +12,6 @@ public class BufferedReaderDemo {
 
     public static void main(String[] args) {
 
-
         try {
 
             Reader reader=new BufferedReader(new InputStreamReader(new FileInputStream("C:\\Temp\\reader.txt"),"GBK"));
