@@ -14,6 +14,7 @@ public class BufferedReaderDemo {
 
         try {
 
+            //当读取文本文件时，解决乱码问题
             Reader reader=new BufferedReader(new InputStreamReader(new FileInputStream("C:\\Temp\\reader.txt"),"GBK"));
 
             char[] chars=new char[128];
