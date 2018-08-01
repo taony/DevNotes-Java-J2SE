@@ -6,19 +6,27 @@ import java.util.UUID;
 
 public class RandomAccessFileDemo {
 
-    public void testRaf(){
-        File file=new File("C://Temp/RandomAccessFileDemo.txt");
+    public static void main(String[] args) {
+        testRaf();
+    }
+
+
+    public static void testRaf() {
+
+        File file = new File("/resources/temp/RandomAccessFileDemo.txt");
+
         try {
 
-            if(!file.exists()){
+            if (!file.exists()) {
                 file.createNewFile();
             }
-            RandomAccessFile raf=new RandomAccessFile(file, "rw");
+
+            RandomAccessFile raf = new RandomAccessFile(file, "rw");
+
             raf.writeChars(UUID.randomUUID().toString());
 
-
-        }catch (Exception ex){
-
+        } catch (Exception ex) {
+            ex.printStackTrace();
         }
     }
 }
