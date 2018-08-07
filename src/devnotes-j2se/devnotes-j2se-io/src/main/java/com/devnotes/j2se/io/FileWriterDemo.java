@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.io.Writer;
+import java.util.Date;
 
 /**
  * @author: taony
@@ -14,11 +15,20 @@ import java.io.Writer;
 public class FileWriterDemo {
 
     public static void main(String[] args) {
-        String strFilePath="C:\\Temp\\RandomAccessFileDemo.txt";
+
+        write();
+
+    }
+
+    public static void write(){
+
+        String strFilePath="C:\\Temp\\writer.txt";
+
         try {
+
             Writer writer=new FileWriter(strFilePath,true);
 
-            writer.write("Hello World");
+            writer.write(new Date().toString());
 
             writer.flush();
 

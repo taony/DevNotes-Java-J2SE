@@ -10,9 +10,9 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.devnotes.j2se</groupId>
-    <artifactId>devnotes-j2se-xml</artifactId>
+    <artifactId>devnotes-j2se-thread</artifactId>
 
-    <name>devnotes-j2se-xml</name>
+    <name>devnotes-j2se-thread</name>
     <!-- FIXME change it to the project's website -->
     <url>http://www.example.com</url>
 
