@@ -2,6 +2,7 @@ package com.devnotes.j2se.io;
 
 import java.io.File;
 import java.io.IOException;
+import java.util.Random;
 
 /**
  * 文件DEMO
@@ -10,11 +11,16 @@ public class FileDemo {
 
     public static void main(String[] args) {
 
-        getFileNameMethods();
+        //getFileNameMethods();
+
+        //checkFiles();
+
+        getFileInfo();
+
     }
 
     /**
-     * 一、获取文件名相关的操作
+     * 1.1 获取文件名相关的操作
      */
     public static void getFileNameMethods() {
 
@@ -44,7 +50,7 @@ public class FileDemo {
     }
 
     /**
-     * 二、文件对象检测相关方法
+     * 1.2 文件对象检测相关方法
      */
     public static void checkFiles() {
 
@@ -56,16 +62,64 @@ public class FileDemo {
         System.out.println("文件或者目录是否存在：" + exists);
 
         boolean canWrite = file.canWrite();
-        System.out.println("文件是否可写入：" + canWrite);
+        System.out.println("File对象是否可写入：" + canWrite);
 
         boolean canRead = file.canRead();
-        System.out.println("文件是否可读：" + canRead);
+        System.out.println("File对象是否可读：" + canRead);
 
         boolean isFile = file.isFile();
         System.out.println("判断File对象是否是文件：" + isFile);
 
         boolean isDirectory = file.isDirectory();
         System.out.println("判断File对象是否是目录：" + isDirectory);
+
+        boolean isAbsolute = file.isAbsolute();
+        System.out.println("File对象对应的文件或目录是否是绝对路径：" + isAbsolute);
+
+    }
+
+
+    /**
+     * 1.3 获取文件信息
+     */
+    public static void getFileInfo() {
+        String strFilePath = "C:" + File.separator + "temp" + File.separator + "file.txt";
+        File file = new File(strFilePath);
+
+        long len = file.length();
+        System.out.println("文件内容长度：" + len);
+
+        long lastModified = file.lastModified();
+        System.out.println("文件最后修改时间：" + lastModified);
+    }
+
+    /**
+     * 1.4 文件操作相关方法
+     */
+    public static void fileOpration() {
+
+        String strFilePath = "C:" + File.separator + "temp" + File.separator + "file" + new Random().nextInt(100) + ".txt";
+        File file = new File(strFilePath);
+
+
+        try {
+
+            // 判断文件是否存在，如果不存在，则新增
+            if (!file.exists()) {
+                file.createNewFile();
+            }
+
+            //File.createTempFile();
+
+            //删除文件
+            file.delete();
+
+            //文件删除
+            file.deleteOnExit();
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
 
     }
 
