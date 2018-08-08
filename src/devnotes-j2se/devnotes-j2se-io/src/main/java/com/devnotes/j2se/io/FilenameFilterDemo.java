@@ -17,7 +17,7 @@ public class FilenameFilterDemo {
 
         File file = new File("D:\\");
 
-        //需要厂家一个过滤实现类
+        //需要创建一个过滤实现类
         MyFilter filter = new MyFilter("ec");
 
         String[] names = file.list(filter);

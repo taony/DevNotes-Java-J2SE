@@ -15,8 +15,11 @@ public class FileDemo {
 
         //checkFiles();
 
-        getFileInfo();
+        //getFileInfo();
 
+        fileMethods();
+
+        dirMethods();
     }
 
     /**
@@ -96,11 +99,13 @@ public class FileDemo {
     /**
      * 1.4 文件操作相关方法
      */
-    public static void fileOpration() {
+    public static void fileMethods() {
 
         String strFilePath = "C:" + File.separator + "temp" + File.separator + "file" + new Random().nextInt(100) + ".txt";
-        File file = new File(strFilePath);
 
+        System.out.println(strFilePath);
+
+        File file = new File(strFilePath);
 
         try {
 
@@ -109,17 +114,40 @@ public class FileDemo {
                 file.createNewFile();
             }
 
-            //File.createTempFile();
 
             //删除文件
             file.delete();
 
-            //文件删除
-            file.deleteOnExit();
+            //创建临时文件，预定义参数是临时文件的前缀和后缀
+            File fileTemp = File.createTempFile("temp", ".fs");
+            System.out.println(fileTemp.getCanonicalPath());
+            //当虚拟机退出时，删除临时文件
+            fileTemp.deleteOnExit();
 
         } catch (Exception e) {
             e.printStackTrace();
         }
+
+    }
+
+    /**
+     * 1.5 目录操作相关方法
+     */
+    public static void dirMethods() {
+        File file = new File(".");
+
+        //创建文件目录
+        file.mkdir();
+
+        //列出File对象所有子文件名和路径名，返回字符串数组
+        String[] strNames = file.list();
+
+        //列出File所有的子文件和路径，返回File数组
+        File[] files = file.listFiles();
+
+        //列出系统所有的根路径
+        files = File.listRoots();
+
 
     }
 
