@@ -10,15 +10,63 @@ public class FileDemo {
 
     public static void main(String[] args) {
 
-        listFileNames();
+        getFileNameMethods();
+    }
 
-        listFiles(".");
+    /**
+     * 一、获取文件名相关的操作
+     */
+    public static void getFileNameMethods() {
 
-        create();
+        //文件对象
+        String strFilePath = "C:" + File.separator + "temp" + File.separator + "file.txt";
+        File file = new File(strFilePath);
 
-        delete();
+        //获取文件名
+        String fileName = file.getName();
+        System.out.println("文件名：" + fileName);
 
-        mkdir();
+        String filePath = file.getPath();
+        System.out.println("文件对应的路径名：" + filePath);
+
+        File fileAbsolute = file.getAbsoluteFile();
+        System.out.println("文件对象的绝对路径：" + fileAbsolute);
+
+        String fileAbsolutePath = file.getAbsolutePath();
+        System.out.println("文件相对路径名称：" + fileAbsolutePath);
+
+        String fileParent = file.getParent();
+        System.out.println("文件父路径名称：" + fileParent);
+
+        boolean renamed = file.renameTo(new File("C:\\temp\\ newfile.txt"));
+        System.out.println("文件重命名是否成功：" + renamed);
+
+    }
+
+    /**
+     * 二、文件对象检测相关方法
+     */
+    public static void checkFiles() {
+
+        String strFilePath = "C:" + File.separator + "temp" + File.separator + "file.txt";
+        File file = new File(strFilePath);
+
+        //检测文件是否存在
+        boolean exists = file.exists();
+        System.out.println("文件或者目录是否存在：" + exists);
+
+        boolean canWrite = file.canWrite();
+        System.out.println("文件是否可写入：" + canWrite);
+
+        boolean canRead = file.canRead();
+        System.out.println("文件是否可读：" + canRead);
+
+        boolean isFile = file.isFile();
+        System.out.println("判断File对象是否是文件：" + isFile);
+
+        boolean isDirectory = file.isDirectory();
+        System.out.println("判断File对象是否是目录：" + isDirectory);
+
     }
 
     public static void listFileNames() {
@@ -33,16 +81,16 @@ public class FileDemo {
         }
     }
 
-    public static void listFiles(String path){
-        File file=new File(path);
-        File[] files=file.listFiles();
-        if(null!=files&& files.length>0){
-            for(File f:files){
-                if(f.isDirectory()){
-                    System.out.println("文件目录："+f.getPath());
+    public static void listFiles(String path) {
+        File file = new File(path);
+        File[] files = file.listFiles();
+        if (null != files && files.length > 0) {
+            for (File f : files) {
+                if (f.isDirectory()) {
+                    System.out.println("文件目录：" + f.getPath());
                     listFiles(f.getPath());
-                }else{
-                    System.out.println("文件："+f.getName());
+                } else {
+                    System.out.println("文件：" + f.getName());
                 }
             }
         }
