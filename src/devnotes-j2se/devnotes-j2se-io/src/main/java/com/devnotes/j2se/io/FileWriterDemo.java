@@ -28,10 +28,16 @@ public class FileWriterDemo {
     public static void write() {
         String strFilePath = String.format("C:%sTemp%swriter.txt", File.separator, File.separator);
         try {
+
             FileWriter writer = new FileWriter(strFilePath, true);
             writer.write(new Date().toString());
+
+            //刷新
             writer.flush();
+
+            //关闭文件流
             writer.close();
+
         } catch (IOException e) {
             e.printStackTrace();
         }
