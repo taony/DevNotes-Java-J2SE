@@ -8,4 +8,9 @@ package com.devnotes.j2se.io;
  */
 public class FileOutputStreamDemo {
 
+    public static void main(String[] args) {
+
+    }
+
+
 }

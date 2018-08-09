@@ -1,5 +1,7 @@
 package com.devnotes.j2se.io;
 
+import com.sun.javafx.binding.StringFormatter;
+
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -20,20 +22,16 @@ public class FileWriterDemo {
 
     }
 
-    public static void write(){
-
-        String strFilePath="C:\\Temp\\writer.txt";
-
+    /**
+     *
+     */
+    public static void write() {
+        String strFilePath = String.format("C:%sTemp%swriter.txt", File.separator, File.separator);
         try {
-
-            Writer writer=new FileWriter(strFilePath,true);
-
+            FileWriter writer = new FileWriter(strFilePath, true);
             writer.write(new Date().toString());
-
             writer.flush();
-
             writer.close();
-
         } catch (IOException e) {
             e.printStackTrace();
         }
