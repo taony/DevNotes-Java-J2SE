@@ -17,9 +17,7 @@ import java.util.Date;
 public class FileWriterDemo {
 
     public static void main(String[] args) {
-
         write();
-
     }
 
     /**
