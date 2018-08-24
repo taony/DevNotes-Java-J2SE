@@ -2,6 +2,7 @@ package com.devnotes.j2se.io;
 
 import java.io.File;
 import java.io.FileReader;
+import java.io.FilterReader;
 import java.io.Reader;
 
 public class FilterReaderDemo {
