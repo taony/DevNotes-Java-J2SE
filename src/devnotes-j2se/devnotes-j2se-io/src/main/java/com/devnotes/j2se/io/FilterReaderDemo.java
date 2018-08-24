@@ -9,7 +9,7 @@ public class FilterReaderDemo {
     public static void main(String[] args) {
 
         try {
-            File file = new File("/temp/FilterReaderDemo.txt");
+            File file = new File("C:\\temp\\FilterReaderDemo.txt");
             Reader reader = new FileReader(file);
             char[] arr = new char[1024];
             while (reader.read(arr) > 0) {
