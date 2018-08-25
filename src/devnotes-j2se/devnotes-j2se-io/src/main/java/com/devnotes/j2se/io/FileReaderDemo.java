@@ -3,6 +3,7 @@ package com.devnotes.j2se.io;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
+import java.io.FilterReader;
 
 /**
  * @author: taony
@@ -13,7 +14,6 @@ import java.io.FileReader;
 public class FileReaderDemo {
 
     public static void main(String[] args) {
-
         try {
             FileReader fileReader=new FileReader(new File(""));
 
