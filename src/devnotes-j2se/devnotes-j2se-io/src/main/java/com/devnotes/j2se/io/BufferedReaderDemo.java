@@ -11,10 +11,7 @@ import java.io.*;
 public class BufferedReaderDemo {
 
     public static void main(String[] args) {
-
         readTextFile();
-
-
     }
 
 
