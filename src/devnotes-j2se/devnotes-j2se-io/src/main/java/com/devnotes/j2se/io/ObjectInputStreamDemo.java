@@ -1,5 +1,7 @@
 package com.devnotes.j2se.io;
 
+import com.devnotes.j2se.io.common.FileTestUtil;
+
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.ObjectInputStream;
@@ -14,7 +16,7 @@ public class ObjectInputStreamDemo {
 
     public static void main(String[] args) throws Exception {
 
-        File file = new File("ObjectOutputStream.txt");
+        File file = new File(FileTestUtil.getTempDir() + "ObjectOutputStream.txt");
 
         FileInputStream fis = new FileInputStream(file);
 

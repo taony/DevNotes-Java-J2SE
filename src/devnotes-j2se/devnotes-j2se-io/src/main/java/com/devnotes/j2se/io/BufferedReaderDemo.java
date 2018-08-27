@@ -16,19 +16,19 @@ public class BufferedReaderDemo {
 
 
     /**
-     *  读取文本文件
+     * 读取文本文件
      */
-    public static void readTextFile(){
+    public static void readTextFile() {
         try {
 
             //当读取文本文件时，解决乱码问题
-            Reader reader=new BufferedReader(new InputStreamReader(
-                    new FileInputStream("C:\\Temp\\reader.txt"),"GBK"));
+            Reader reader = new BufferedReader(new InputStreamReader(new FileInputStream("C:\\Temp\\reader.txt"), "GBK"));
 
-            char[] chars=new char[128];
+            char[] chars = new char[24];
 
-            while (reader.read(chars)>0){
-                String str=new String(chars);
+            while (reader.read(chars) > 0)
+            {
+                String str = new String(chars);
                 System.out.println(str);
             }
 
@@ -38,7 +38,4 @@ public class BufferedReaderDemo {
             e.printStackTrace();
         }
     }
-
-
-
 }

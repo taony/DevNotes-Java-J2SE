@@ -1,5 +1,7 @@
 package com.devnotes.j2se.io;
 
+import com.devnotes.j2se.io.common.FileTestUtil;
+
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.ObjectOutputStream;
@@ -20,15 +22,15 @@ public class ObjectOutputStreamDemo {
 
     }
 
-    public static void outputObject() throws Exception{
+    public static void outputObject() throws Exception {
 
-        User user=new User("zhangsan","123456");
+        User user = new User("zhangsan", "123456", 5);
 
-        File file=new File("ObjectOutputStream.txt");
+        File file = new File(FileTestUtil.getTempDir() + "ObjectOutputStream.txt");
 
-        FileOutputStream fileOutputStream=new FileOutputStream(file);
+        FileOutputStream fileOutputStream = new FileOutputStream(file);
 
-        ObjectOutputStream outputStream=new ObjectOutputStream(fileOutputStream);
+        ObjectOutputStream outputStream = new ObjectOutputStream(fileOutputStream);
 
         outputStream.writeObject(user);
 
@@ -41,15 +43,18 @@ public class ObjectOutputStreamDemo {
 
 class User implements Serializable {
 
-    private String userName;
-    private String userPwd;
+    private String  userName;
+    private String  userPwd;
+    private transient Integer age;
+
 
     public User() {
 
     }
 
-    public User(String name, String pwd) {
+    public User(String name, String pwd, int age) {
         this.userName = name;
         this.userPwd = pwd;
+        this.age = age;
     }
 }
