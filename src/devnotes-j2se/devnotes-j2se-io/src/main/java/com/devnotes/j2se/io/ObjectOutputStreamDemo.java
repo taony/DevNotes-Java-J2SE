@@ -23,19 +23,12 @@ public class ObjectOutputStreamDemo {
     }
 
     public static void outputObject() throws Exception {
-
-        User user = new User("zhangsan", "123456", 5);
-
-        File file = new File(FileTestUtil.getTempDir() + "ObjectOutputStream.txt");
-
-        FileOutputStream fileOutputStream = new FileOutputStream(file);
-
-        ObjectOutputStream outputStream = new ObjectOutputStream(fileOutputStream);
-
-        outputStream.writeObject(user);
-
-        outputStream.close();
-
+        User               user = new User("zhangsan", "123456", 5);
+        File               file = new File(FileTestUtil.getTempDir() + "ObjectOutputStream.txt");
+        FileOutputStream   fos  = new FileOutputStream(file);
+        ObjectOutputStream os   = new ObjectOutputStream(fos);
+        os.writeObject(user);
+        os.close();
     }
 
 
@@ -43,8 +36,8 @@ public class ObjectOutputStreamDemo {
 
 class User implements Serializable {
 
-    private String  userName;
-    private String  userPwd;
+    private           String  userName;
+    private           String  userPwd;
     private transient Integer age;
 
 
