@@ -26,6 +26,7 @@ public class ObjectOutputStreamDemo {
         File               file = new File(FileTestUtil.getTempDir() + "ObjectOutputStream.txt");
         FileOutputStream   fos  = new FileOutputStream(file);
         ObjectOutputStream os   = new ObjectOutputStream(fos);
+
         os.writeObject(user);
         os.close();
     }
@@ -49,15 +50,17 @@ class User implements Serializable {
 
     /**
      * 自定义序列化方法
+     *
      * @param os
      * @throws Exception
      */
-    private void writeObject(ObjectOutputStream os) throws Exception{
+    private void writeObject(ObjectOutputStream os) throws Exception {
         os.defaultWriteObject();
     }
 
     /**
      * 自定义反序列化方法
+     *
      * @param is
      * @throws Exception
      */
