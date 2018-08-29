@@ -3,7 +3,6 @@ package com.devnotes.j2se.io;
 import com.devnotes.j2se.io.common.FileTestUtil;
 
 import java.io.*;
-import java.rmi.server.ExportException;
 
 /**
  * @author: taony
