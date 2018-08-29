@@ -2,10 +2,8 @@ package com.devnotes.j2se.io;
 
 import com.devnotes.j2se.io.common.FileTestUtil;
 
-import java.io.File;
-import java.io.FileOutputStream;
-import java.io.ObjectOutputStream;
-import java.io.Serializable;
+import java.io.*;
+import java.rmi.server.ExportException;
 
 /**
  * @author: taony
@@ -23,6 +21,8 @@ public class ObjectOutputStreamDemo {
     }
 
     public static void outputObject() throws Exception {
+
+
         User               user = new User("zhangsan", "123456", 5);
         File               file = new File(FileTestUtil.getTempDir() + "ObjectOutputStream.txt");
         FileOutputStream   fos  = new FileOutputStream(file);
@@ -35,6 +35,8 @@ public class ObjectOutputStreamDemo {
 }
 
 class User implements Serializable {
+    private static final long serialVersionUID = 1L;
+
     private           String  userName;
     private           String  userPwd;
     private transient Integer age;
@@ -45,4 +47,23 @@ class User implements Serializable {
         this.userPwd = pwd;
         this.age = age;
     }
+
+    /**
+     * 自定义序列化方法
+     * @param os
+     * @throws Exception
+     */
+    private void writeObject(ObjectOutputStream os) throws Exception{
+        os.defaultWriteObject();
+    }
+
+    /**
+     * 自定义反序列化方法
+     * @param is
+     * @throws Exception
+     */
+    private void readOjbect(ObjectInputStream is) throws Exception {
+        is.defaultReadObject();
+    }
+
 }
