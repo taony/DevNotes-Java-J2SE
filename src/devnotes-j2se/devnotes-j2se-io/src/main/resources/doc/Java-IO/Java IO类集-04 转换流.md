@@ -56,7 +56,9 @@ public InputStreamReader(InputStream in, CharsetDecoder dec)
 ```
     public static void main(String[] args) {
         try {
-            //将 System.in 对象转换为 Reader 对象
+            
+            //将 System.in 对象转换为 Reader 对象，System.in 是InputStream
+            
             InputStreamReader reader = new InputStreamReader(System.in);
             BufferedReader br = new BufferedReader(reader);
             String line = null;
@@ -88,7 +90,18 @@ java.lang.Object
 
 
 ```
+ public static void main(String[] args) {
 
+        try {
+            //System.err 在控制台输出是红色的字体
+            OutputStream os =System.err;
+            OutputStreamWriter osw=new OutputStreamWriter(os);
+            osw.write("OutputStreamWriterDemo");
+            osw.close();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 
 
 ```
