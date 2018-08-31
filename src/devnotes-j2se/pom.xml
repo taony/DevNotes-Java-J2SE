@@ -17,6 +17,7 @@
       <module>devnotes-j2se-thread</module>
       <module>devnotes-j2se-xml</module>
       <module>devnotes-j2se-jdbc</module>
+      <module>devnotes-j2se-nio</module>
   </modules>
 
   <name>devnotes-j2se</name>
