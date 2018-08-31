@@ -1,7 +1,7 @@
 package com.devnotes.j2se.io;
 
 import com.devnotes.j2se.io.common.FileTestUtil;
-import com.devnotes.j2se.io.object_demo.User;
+import com.devnotes.j2se.io.bo.SerialBean;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -23,7 +23,7 @@ public class ObjectInputStreamDemo {
 
         ObjectInputStream ois = new ObjectInputStream(fis);
 
-        User user = (User) ois.readObject();
+        SerialBean user = (SerialBean) ois.readObject();
 
         System.out.println(user);
 

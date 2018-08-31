@@ -1,7 +1,7 @@
 package com.devnotes.j2se.io;
 
 import com.devnotes.j2se.io.common.FileTestUtil;
-import com.devnotes.j2se.io.object_demo.User;
+import com.devnotes.j2se.io.bo.SerialBean;
 
 import java.io.*;
 
@@ -23,7 +23,7 @@ public class ObjectOutputStreamDemo {
     public static void outputObject() throws Exception {
 
 
-        User               user = new User("zhangsan", "123456", 5);
+        SerialBean         user = new SerialBean("zhangsan", "123456", 5);
         File               file = new File(FileTestUtil.getTempDir() + "ObjectOutputStream.txt");
         FileOutputStream   fos  = new FileOutputStream(file);
         ObjectOutputStream os   = new ObjectOutputStream(fos);
