@@ -1,6 +1,7 @@
 package com.devnotes.j2se.io;
 
 import com.devnotes.j2se.io.common.FileTestUtil;
+import com.devnotes.j2se.io.object_demo.User;
 
 import java.io.*;
 
@@ -34,38 +35,3 @@ public class ObjectOutputStreamDemo {
 
 }
 
-class User implements Serializable {
-    private static final long serialVersionUID = 1L;
-
-    private           String  userName;
-    private           String  userPwd;
-    private transient Integer age;
-
-    //序列化对象不需要提供默认构造器，序列化时不需要依赖于默认构造器
-    public User(String name, String pwd, int age) {
-        this.userName = name;
-        this.userPwd = pwd;
-        this.age = age;
-    }
-
-    /**
-     * 自定义序列化方法
-     *
-     * @param os
-     * @throws Exception
-     */
-    private void writeObject(ObjectOutputStream os) throws Exception {
-        os.defaultWriteObject();
-    }
-
-    /**
-     * 自定义反序列化方法
-     *
-     * @param is
-     * @throws Exception
-     */
-    private void readOjbect(ObjectInputStream is) throws Exception {
-        is.defaultReadObject();
-    }
-
-}

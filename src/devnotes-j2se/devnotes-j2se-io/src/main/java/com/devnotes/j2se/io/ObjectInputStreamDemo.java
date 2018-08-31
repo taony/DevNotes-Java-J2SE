@@ -1,6 +1,7 @@
 package com.devnotes.j2se.io;
 
 import com.devnotes.j2se.io.common.FileTestUtil;
+import com.devnotes.j2se.io.object_demo.User;
 
 import java.io.File;
 import java.io.FileInputStream;
