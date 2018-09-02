@@ -15,18 +15,15 @@ public class ObjectOutputStreamDemo {
 
 
     public static void main(String[] args) throws Exception {
-
         outputObject();
-
     }
 
     public static void outputObject() throws Exception {
 
-
-        SerialBean         user = new SerialBean("zhangsan", "123456", 5);
-        File               file = new File(FileTestUtil.getTempDir() + "ObjectOutputStream.txt");
-        FileOutputStream   fos  = new FileOutputStream(file);
-        ObjectOutputStream os   = new ObjectOutputStream(fos);
+        var user = new SerialBean("zhangsan", "123456", 5);
+        var file = new File(FileTestUtil.getTempDir() + "ObjectOutputStream.txt");
+        var fos  = new FileOutputStream(file);
+        var os   = new ObjectOutputStream(fos);
 
         os.writeObject(user);
         os.close();

@@ -1,11 +1,8 @@
 package com.devnotes.j2se.io;
 
-import com.sun.javafx.binding.StringFormatter;
-
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.io.Writer;
 import java.util.Date;
 
 /**
