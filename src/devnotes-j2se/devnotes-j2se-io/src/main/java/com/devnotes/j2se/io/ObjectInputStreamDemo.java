@@ -16,19 +16,11 @@ import java.io.ObjectInputStream;
 public class ObjectInputStreamDemo {
 
     public static void main(String[] args) throws Exception {
-
-        File file = new File(FileTestUtil.getTempDir() + "ObjectOutputStream.txt");
-
-        FileInputStream fis = new FileInputStream(file);
-
-        ObjectInputStream ois = new ObjectInputStream(fis);
-
-        SerialBean user = (SerialBean) ois.readObject();
-
+        var file = new File(FileTestUtil.getTempDir() + "ObjectOutputStream.txt");
+        var fis  = new FileInputStream(file);
+        var ois  = new ObjectInputStream(fis);
+        var user = (SerialBean) ois.readObject();
         System.out.println(user);
-
         ois.close();
     }
-
-
 }

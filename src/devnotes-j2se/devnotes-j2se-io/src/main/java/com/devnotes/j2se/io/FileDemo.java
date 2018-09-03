@@ -114,7 +114,6 @@ public class FileDemo {
                 file.createNewFile();
             }
 
-
             //删除文件
             file.delete();
 
