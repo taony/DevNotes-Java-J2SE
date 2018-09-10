@@ -17,7 +17,6 @@ public class PushbackInputStreamDemo {
             byte[] bytes = new byte[2];
 
             while (pis.read(bytes) > 0) {
-                pis.unread(1);
                 System.out.println(new String(bytes));
             }
         } catch (Exception ex) {
