@@ -36,7 +36,7 @@ public class RandomAccessFileDemo {
         File file = new File(FileTestUtil.getTempDir() + "RandomAccessFileDemo.txt");
         try {
             RandomAccessFile raf = new RandomAccessFile(file, "r");
-            Byte[] bytes=new Byte[1024];
+            byte[] bytes=new byte[1024];
             raf.readFully(bytes);
             raf.close();
         } catch (Exception ex) {
