@@ -12,18 +12,20 @@ public class BufferDemo {
 
     public static void main(String[] args) throws Exception {
 
-        File        file       = new File(FileTestUtil.getTempDir() + "BufferDemo.txt");
-        FileChannel channel    = new FileInputStream(file).getChannel();
-        ByteBuffer  byteBuffer = ByteBuffer.allocate(128);
+        File file = new File(FileTestUtil.getTempDir() + "BufferDemo.txt");
 
-        Charset        charset        = Charset.forName("UTF-8");
-        CharsetDecoder charsetDecoder = charset.newDecoder();
-        CharBuffer     charBuffer     = null;
+        FileChannel channel = new FileInputStream(file).getChannel();
+
+        ByteBuffer byteBuffer = ByteBuffer.allocate(128);
+
+        Charset        charset = Charset.forName("UTF-8");
+        CharsetDecoder decoder = charset.newDecoder();
+        CharBuffer     buffer  = null;
 
         while (channel.read(byteBuffer) != -1) {
             byteBuffer.flip();
-            charBuffer = charsetDecoder.decode(byteBuffer.asReadOnlyBuffer());
-            System.out.println(charBuffer.toString());
+            buffer = decoder.decode(byteBuffer.asReadOnlyBuffer());
+            System.out.println(buffer.toString());
             byteBuffer.clear();
         }
 
