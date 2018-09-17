@@ -12,13 +12,13 @@ public class BufferDemo {
 
     public static void main(String[] args) throws Exception {
 
-        File file = new File(FileTestUtil.getTempDir() + "BufferDemo.txt");
+        File file = new File(FileTestUtil.getTempDir() + "BufferDemo_CN.txt");
 
         FileChannel channel = new FileInputStream(file).getChannel();
 
         ByteBuffer byteBuffer = ByteBuffer.allocate(128);
 
-        Charset        charset = Charset.forName("UTF-8");
+        Charset        charset = Charset.forName("GBK");
         CharsetDecoder decoder = charset.newDecoder();
         CharBuffer     buffer  = null;
 
