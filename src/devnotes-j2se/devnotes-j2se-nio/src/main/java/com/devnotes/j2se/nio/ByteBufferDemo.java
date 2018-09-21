@@ -7,6 +7,9 @@ import java.nio.channels.FileChannel;
 import java.nio.charset.Charset;
 import java.nio.charset.CharsetDecoder;
 
+/**
+ *
+ */
 public class ByteBufferDemo {
 
     public static void main(String[] args) throws Exception{
@@ -20,6 +23,13 @@ public class ByteBufferDemo {
         }
     }
 
+    /**
+     * 将ByteBuffer转换为String字符串
+     *
+     * @param byteBuffer
+     * @return
+     * @throws Exception
+     */
     public static String getString(ByteBuffer byteBuffer) throws Exception{
         Charset charset=Charset.forName("UTF-8");
         CharsetDecoder decoder=charset.newDecoder();
