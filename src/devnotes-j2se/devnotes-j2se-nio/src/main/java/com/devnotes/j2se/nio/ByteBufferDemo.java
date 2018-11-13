@@ -13,12 +13,22 @@ import java.nio.charset.CharsetDecoder;
 public class ByteBufferDemo {
 
     public static void main(String[] args) throws Exception{
+
+        //打开读写模式
         RandomAccessFile raf=new RandomAccessFile(FileTestUtil.getTempDir()+"ByteBufferDemo.txt","rw");
+
+        //获取通道
         FileChannel channel=raf.getChannel();
+
+        //定义缓冲区
         ByteBuffer byteBuffer=ByteBuffer.allocate(48);
+
         while (channel.read(byteBuffer)>0){
+
             byteBuffer.flip();
+
             System.out.println(getString(byteBuffer));
+
             byteBuffer.clear();
         }
     }
