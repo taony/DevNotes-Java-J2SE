@@ -23,7 +23,7 @@ public class BufferDemo {
         CharBuffer     buffer  = null;
 
         while (channel.read(byteBuffer) != -1) {
-            byteBuffer.flip();
+            byteBuffer.flip(); //反转此缓冲区
             buffer = decoder.decode(byteBuffer.asReadOnlyBuffer());
             System.out.println(buffer.toString());
             byteBuffer.clear();
