@@ -12,13 +12,9 @@ public class FileDemo {
     public static void main(String[] args) {
 
         //getFileNameMethods();
-
         //checkFiles();
-
         //getFileInfo();
-
         fileMethods();
-
         dirMethods();
     }
 
